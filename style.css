@@ -1,0 +1,129 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+
+.container
+{
+    position: relative;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .ring
+{
+    position: relative;
+    width: 150px;
+    height: 120px;
+    margin: -30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top: 3px solid #24ecff;
+    animation: animate 2s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg); 
+    }
+    100%
+    {
+        transform: rotate(350deg);
+    }
+}
+.container .ring::before
+{
+    content: 'Are';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 12px;
+    background: #24ecff;
+    box-shadow: 0 0 0 5px #24ecff33,
+    0 0 0 10px #24ecff22,
+    0 0 20px #24ecff,
+    0 0 50px #24ecff;
+}
+
+.container .ring:nth-child(2)
+{
+   animation: animate2 3s linear infinite;
+   animation-delay: -2s;
+   border-top: 2px solid transparent;
+   border-left: 3px solid #93ff2d;
+}
+.container .ring:nth-child(2)::before
+{
+content: 'you';
+position: absolute;
+top: initial;
+bottom: 12px;
+left: 12px;
+border-radius: 50%;
+width: 15px;
+height: 15px;
+background: #93ff2d;
+box-shadow: 0 0 0 5px #93ff2d33,
+0 0 0 10px #93ff2d22,
+0 0 20px #93ff2d,
+0 0 50px #93ff2d;
+}
+@keyframes animate2
+{
+    0%
+    {
+        transform: rotate(355deg); 
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+.container .ring:nth-child(3)
+{
+    animation: animate2 2s linear infinite;
+    animation-delay: -1s;
+    position: absolute;
+    top: -66.66px;
+    border-top: 2px solid transparent;
+    border-left: 4px solid purple;
+}
+.container .ring:nth-child(3)::before
+{
+content: 'ready';
+position: absolute;
+top: initial;
+bottom: 12px;
+left: 12px;
+border-radius: 50%;
+width: 15px;
+height: 15px;
+background: purple;
+box-shadow: 0 0 0 5px #93ff2d33,
+0 0 0 10px #e41cf822,
+0 0 20px purple,
+0 0 50px purple;
+}
+.container p
+{
+    position: absolute;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: arial;
+    bottom: -80px;
+    letter-spacing: 0.1em;
+}
